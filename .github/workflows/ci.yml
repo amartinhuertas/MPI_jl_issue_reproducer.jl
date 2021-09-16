@@ -16,6 +16,7 @@ jobs:
        run: |
            sudo apt-get update 
            sudo apt-get install -y wget gfortran g++ openmpi-bin libopenmpi-dev
+     - uses: julia-actions/julia-buildpkg@latest
      - run: julia --project=. --color=yes -e 'using Pkg; Pkg.instantiate()'
      - run: julia --project=. -e 'using Pkg; pkg"instantiate"'
      - run: julia --project=. -e 'using Pkg; pkg"precompile"'
